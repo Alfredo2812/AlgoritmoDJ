@@ -15,10 +15,7 @@ class AlgoritmoDJ{
      * En este metodo se incia el algoritmo
      */
     private void start(){
-        System.out.println("[OK] starting . . .");
-        
-        Gui guiInterface = new Gui();
-        guiInterface.setVisible(true);
+        System.out.println("Prueba");
     
     } 
     public static void main(String[] args) {
