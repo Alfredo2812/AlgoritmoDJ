@@ -1,23 +1,8 @@
-/**
- * @author: Ing. Noé Vásquez Godínez
- * @email: noe-vg@outlook.com
- * @about: Clase para implementar Dijkstra's algorithm
- */
- import java.io.*;
-import java.util.*;
-class AlgoritmoDJ{
-    /**
-     * @about:
-     * En este metodo se iniciara sel setup del algoritmo
-     */
-    public void init(){
-        this.start();
-    }
-    /**@about: 
-     * En este metodo se incia el algoritmo
-     */
-    private void start(){
 
+import java.io.*;
+import java.util.*;
+
+class dijkstra{
 
   int[][] matrizAdy;
   int nNodos;
@@ -28,7 +13,7 @@ class AlgoritmoDJ{
   InputStreamReader l1;
   BufferedReader l2;
 
-  AlgoritmoDJ(int numNodos){
+  dijkstra(int numNodos){
     matrizAdy = new int[numNodos][numNodos];
     int aux=0;
     l1 = new InputStreamReader(System.in);
@@ -61,7 +46,7 @@ class AlgoritmoDJ{
     for(int cuenta=1;cuenta<=nNodos;cuenta++)
       for(int cnt=1;cnt<=nNodos;cnt++){
         if(cnt!=cuenta){
-          System.out.println("nodo "+(char)(cuenta+64)+" al nodo "+(char)(cnt+64));
+          System.out.println("Costo de la arista dirigida del nodo "+(char)(cuenta+64)+" al nodo "+(char)(cnt+64));
           System.out.print("(Ingresa 0 si la arista no existe) ");
           ocurrioError=false;
           try{
@@ -135,6 +120,7 @@ class AlgoritmoDJ{
           };
         imprimeCamino(tmp,j,origen);
       }
+    System.out.println("\n <-  Que tenga un buen viaje! ->\n");
   }
 
   private int min(int dest){
@@ -198,12 +184,4 @@ class AlgoritmoDJ{
     }while(num<3 || num>26);
     dijkstra obj = new dijkstra(num);
   }
-
-
-    
-    } 
-    public static void main(String[] args) {
-        AlgoritmoDJ algoritmoDJ = new AlgoritmoDJ();
-        algoritmoDJ.init();
-    }
 }
